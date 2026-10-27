@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🎬 Movie Ticket Management System</h1>
+        <p>Book Your Movie Tickets Online</p>
+    </header>
+
+    <section class="container">
+
+        <h2>Available Movies</h2>
+
+        <div class="movies">
+
+            <div class="movie-card">
+                <h3>Pushpa 2</h3>
+                <p>Action / Drama</p>
+                <p class="price">₹150</p>
+                <button onclick="selectMovie('Pushpa 2', 150)">
+                    Select Movie
+                </button>
+            </div>
+
+            <div class="movie-card">
+                <h3>Stree 2</h3>
+                <p>Comedy / Horror</p>
+                <p class="price">₹150</p>
+                <button onclick="selectMovie('Stree 2', 150)">
+                    Select Movie
+                </button>
+            </div>
+
+            <div class="movie-card">
+                <h3>Chhava</h3>
+                <p>Historical / Drama</p>
+                <p class="price">₹150</p>
+                <button onclick="selectMovie('Chhava', 150)">
+                    Select Movie
+                </button>
+            </div>
+
+        </div>
+
+        <div class="booking-box">
+
+            <h2>🎟️ Book Ticket</h2>
+
+            <label>Selected Movie</label>
+            <input type="text" id="movie" readonly>
+
+            <label>Ticket Price</label>
+            <input type="text" id="price" readonly>
+
+            <label>Number of Tickets</label>
+            <input type="number" id="quantity" min="1" value="1" onchange="calculateTotal()">
+
+            <label>Select Seat</label>
+            <select id="seat">
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="A3">A3</option>
+                <option value="A4">A4</option>
+                <option value="B1">B1</option>
+                <option value="B2">B2</option>
+                <option value="B3">B3</option>
+                <option value="B4">B4</option>
+            </select>
+
+            <label>Payment Method</label>
+            <select id="payment">
+                <option value="UPI">UPI</option>
+                <option value="Card">Debit/Credit Card</option>
+                <option value="Cash">Cash</option>
+            </select>
+
+            <h3>Total Amount: ₹<span id="total">0</span></h3>
+
+            <button class="book-btn" onclick="bookTicket()">
+                Book Ticket
+            </button>
+
+        </div>
+
+        <div id="receipt" class="receipt"></div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Movie Ticket Management System</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
